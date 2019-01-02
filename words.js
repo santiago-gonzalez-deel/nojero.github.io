@@ -1,4 +1,4 @@
-export const Words = [['imán','martillo','veneno','diario'],
+const Words = [['imán','martillo','veneno','diario'],
 ['famoso','arcoiris','mafia','laberinto'],
 ['payaso','cohete','poker','elefante'],
 ['policía','arma','cadena','escorpión'],
