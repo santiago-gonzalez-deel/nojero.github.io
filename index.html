@@ -4,112 +4,99 @@
   <meta charset="utf8" />
   <link href="style.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.4/seedrandom.min.js"></script>
 </head>
 
 <body>
-  <div class="page">
+  <div id="setup" class="page">
+    <div class="seed">
+      <div class="seed-container">
+        <input type="text" id="seed" placeholder="Introduzca la semilla" />
+        <div class="explain">
+          *Ambos equipos deben ingresar el mismo texto (ej: 'Lucio LTA')
+        </div>
+      </div>
+    </div>
+    <div class="teams">
+      <div class="button-container">
+        <button id="white">Blanco</button>
+      </div>
+      <div class="button-container">
+        <button id="black">Negro</button>
+      </div>
+    </div>
+    <div class="links">
+      <div>
+        Reglas: https://www.youtube.com/watch?v=QIPOpdg6Sdo
+      </div>
+      <div style="padding-top: 10px;">
+        <a target="_blank" href="plantilla.pdf">Plantilla</a>
+      </div>
+    </div>
+  </div>
+  <div id="game" class="page hide">
     <div class="data">
       <div class="words_container">
         <div class="word_item">
-          <div class="word">
+          <div class="word" id="word0">
           </div>
           <div class="number">
             1
           </div>
         </div>
         <div class="word_item">
-          <div class="word">
+          <div class="word" id="word1">
           </div>
           <div class="number">
             2
           </div>
         </div>
         <div class="word_item">
-          <div class="word">
+          <div class="word" id="word2">
           </div>
           <div class="number">
             3
           </div>
         </div>
         <div class="word_item">
-          <div class="word">
+          <div class="word" id="word3">
           </div>
           <div class="number">
             4
-          </div>
-        </div>
-      </div>
-      <div class="codes_container">
-        <div class="code_item">
-          <div class="code show" data-turn="1">
-          </div>
-          <div class="number">
-            1
-          </div>
-        </div>
-        <div class="code_item">
-          <div class="code" data-turn="2">
-          </div>
-          <div class="number">
-            2
-          </div>
-        </div>
-        <div class="code_item">
-          <div class="code" data-turn="3">
-          </div>
-          <div class="number">
-            3
-          </div>
-        </div>
-        <div class="code_item">
-          <div class="code" data-turn="4">
-          </div>
-          <div class="number">
-            4
-          </div>
-        </div>
-        <div class="code_item">
-          <div class="code" data-turn="5">
-          </div>
-          <div class="number">
-            5
-          </div>
-        </div>
-        <div class="code_item">
-          <div class="code" data-turn="6">
-          </div>
-          <div class="number">
-            6
-          </div>
-        </div>
-        <div class="code_item">
-          <div class="code" data-turn="7">
-          </div>
-          <div class="number">
-            7
-          </div>
-        </div>
-        <div class="code_item">
-          <div class="code" data-turn="8">
-          </div>
-          <div class="number">
-            8
           </div>
         </div>
       </div>
     </div>
     <div class="metadata">
-      <div class="turn">
-        Turno: <span id="turn">1</span>
+      <div class="codes_container">
+        <div class="code_item">
+          <div class="code" id="code">
+          </div>
+        </div>
       </div>
-      <div class="button-container">
-        <button id="next">Siguiente turno</button>
+      <div class="button-wrapper">
+        <div class="button-container">
+          <button id="code-toggle">Mostrar/Ocultar</button>
+        </div>
       </div>
-      <div class="button-container">
-        <button id="new">Nuevo Juego</button>
+      <div class="button-wrapper">
+        <div class="button-container">
+          <button id="next">Siguiente turno</button>
+        </div>
+      </div>
+      <div class="button-wrapper">
+        <div class="button-container">
+          <button id="new">Nuevo Juego</button>
+        </div>
+      </div>
+      <div class="button-wrapper">
+        <div class="button-container turn">
+          Turno: <span id="turn">1</span>
+        </div>
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="codes.js"></script>
   <script type="text/javascript" src="words.js"></script>
   <script type="text/javascript" src="index.js"></script>
 </body>
