@@ -5,9 +5,16 @@ function shuffleArray(array) {
     }
 }
 
-function setCode() {
+function setCode(team) {
     shuffleArray(Codes);
-    $("#code").html(Codes[0]);
+    let white = Codes[0];
+    shuffleArray(Codes);
+    let black = Codes[0];
+    if (team === 'white') {
+        $("#code").html(white);
+    } else {
+        $("#code").html(black);
+    }
 }
 
 function setupGame(team) {
@@ -27,7 +34,7 @@ function setupGame(team) {
     words.forEach((val, idx) => {
         $("#word"+idx).html(val);
     });
-    setCode();
+    setCode(team);
     $("#setup, #game").toggleClass('hide');
 }
 $("#white").click(() => {
