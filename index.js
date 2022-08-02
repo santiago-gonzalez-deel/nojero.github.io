@@ -49,6 +49,7 @@ $("#next").click(() => {
         alert("No hay más turnos, el juego terminó");
     } else if (confirm("Seguro que desea avanzar de turno?")) {
         $("#turn").html(turn + 1);
+        $("#code").removeClass("show");
         setCode();
     }
 });
